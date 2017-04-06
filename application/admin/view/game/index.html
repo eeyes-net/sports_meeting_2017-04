@@ -1,0 +1,50 @@
+{extend name="common/base" /}
+{block name="main"}
+<h1 class="page-header">比赛编辑</h1>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>比赛名称</th>
+                <th>比赛时间</th>
+                <th>冠军</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {foreach ($games as $game)}
+            <tr>
+                <form action="{:url('admin/Game/update', ['id' => $game->id])}" method="POST">
+                    <input type="hidden" name="_method" value="PUT">
+                    <td>{$game->id|htmlentities}</td>
+                    <td><input type="text" class="form-control" name="name" value="{$game->name|htmlentities}"></td>
+                    <td><input type="text" class="form-control datetimepicker" name="begin_time" value="{$game->begin_time|htmlentities}" data-date-format="yyyy-mm-dd hh:ii"></td>
+                    <td><input type="text" class="form-control" name="champion" value="{$game->champion|htmlentities}"></td>
+                    <td>
+                        <button type="submit" class="btn btn-primary">保存修改</button>
+                        <button type="button" class="btn btn-danger" onclick="confirm('确认删除？') && document.getElementById('form-delete-{$game->id|htmlentities}').submit();">删除</button>
+                    </td>
+                </form>
+                <form action="{:url('admin/Game/delete', ['id' => $game->id])}" id="form-delete-{$game->id|htmlentities}" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                </form>
+            </tr>
+            {/foreach}
+            <tr>
+                <form action="{:url('admin/Game/save')}" method="POST">
+                    <td>+</td>
+                    <td><input type="text" class="form-control" name="name"></td>
+                    <td><input type="text" class="form-control datetimepicker" name="begin_time" data-date-format="yyyy-mm-dd hh:ii"></td>
+                    <td><input type="text" class="form-control" name="champion"></td>
+                    <td>
+                        <button type="submit" class="btn btn-primary">新建</button>
+                    </td>
+                </form>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{/block}

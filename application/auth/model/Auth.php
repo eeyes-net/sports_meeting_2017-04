@@ -8,8 +8,6 @@ class Auth
 {
     /** @var Auth $instance */
     protected static $instance = null;
-    /** @var string $username */
-    protected $username = '';
 
     public function __construct()
     {
@@ -57,6 +55,16 @@ class Auth
         }
         Session::set('username', $net_id);
         return true;
+    }
+
+    /**
+     * 获取用户名
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return Session::get('username');
     }
 
     /**

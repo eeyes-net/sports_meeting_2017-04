@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>后台管理 - 2017年校运会</title>
+
+    <link href="/static/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/dist/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/static/admin/css/dashboard.css" rel="stylesheet">
+    <link href="/static/admin/css/eeyes_common.css" rel="stylesheet">
+</head>
+
+<body>
+    {include file="common/nav" /}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                {block name="main"}{/block}
+            </div>
+            {include file="common/sidebar" /}
+        </div>
+    </div>
+
+    {include file="common/footer" /}
+
+    <script src="/static/dist/js/jquery.min.js"></script>
+    <script src="/static/dist/js/bootstrap.min.js"></script>
+    <script src="/static/dist/js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+        $('.datetimepicker').datetimepicker();
+    </script>
+</body>
+</html>

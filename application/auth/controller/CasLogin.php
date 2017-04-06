@@ -12,4 +12,10 @@ class CasLogin extends Controller
         }
         return redirect(url('admin/Index/index'));
     }
+
+    public static function logout()
+    {
+        auth()->logout();
+        return redirect(url('index/Index/index'));
+    }
 }

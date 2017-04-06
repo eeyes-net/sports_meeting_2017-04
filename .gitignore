@@ -3,3 +3,4 @@
 /thinkphp
 *.log
 .idea
+/application/database.php

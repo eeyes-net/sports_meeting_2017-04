@@ -1,12 +1,25 @@
 <?php
-// +----------------------------------------------------------------------
-// | ThinkPHP [ WE CAN DO IT JUST THINK ]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2006-2016 http://thinkphp.cn All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
-// | Author: 流年 <liu21st@gmail.com>
-// +----------------------------------------------------------------------
 
-// 应用公共文件
+/**
+ * 返回Auth实例
+ *
+ * @return \app\auth\model\Auth
+ */
+function auth()
+{
+    return \app\auth\model\Auth::instance();
+}
+
+/**
+ * 返回PhpCas实例
+ *
+ * @return \PhpSimpleCas\PhpCas
+ */
+function phpCas()
+{
+    $phpCas = null;
+    if (is_null($phpCas)) {
+        $phpCas = new \PhpSimpleCas\PhpCas(config('cas.server_url'));
+    }
+    return $phpCas;
+}

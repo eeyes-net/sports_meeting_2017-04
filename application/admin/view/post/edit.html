@@ -1,0 +1,37 @@
+{extend name="common/base" /}
+{block name="main"}
+<h1 class="page-header">修改文章</h1>
+
+<div class="row">
+    <div class="container-fluid">
+        <div class="col-xs-12">
+            <form class="form-horizontal" action="{:url('admin/Post/update', ['id' => $post->id])}" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="title">标题</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="title" id="title" value="{$post->title|htmlentities}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="editor">内容</label>
+                    <div class="col-sm-10">
+                        <script type="text/javascript" src="/static/ueditor/ueditor.config.js"></script>
+                        <script type="text/javascript" src="/static/ueditor/ueditor.all.min.js"></script>
+                        <script type="text/javascript" src="/static/ueditor/lang/zh-cn/zh-cn.js"></script>
+                        <script type="text/plain" name="body" id="editor" style="width: 100%; height: 500px;">{$post->body}</script>
+                        <script>
+                        var ue = UE.getEditor('editor');
+                        </script>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-2">
+                        <input type="submit" class="btn btn-primary" value="保存修改">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{/block}

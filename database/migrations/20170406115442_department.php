@@ -29,6 +29,7 @@ class Department extends Migrator
     {
         $this->table('department', ['engine' => 'MyISAM'])
             ->addColumn('name', 'text', ['comment' => '单位名称'])
+            ->addColumn('medal_count', 'integer', ['default' => '0', 'comment' => '奖牌数'])
             ->addTimestamps('create_time', 'update_time')
             ->create();
     }

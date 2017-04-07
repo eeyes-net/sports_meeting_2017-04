@@ -106,7 +106,6 @@ body {
   border-radius: 50%;
 }
 
-
-.order-read-change-status-form {
-  display: inline-block;
+.col-no-padding {
+  padding: 0;
 }

@@ -1,0 +1,32 @@
+<ul>
+    {foreach ($games as $game)}
+    <li>
+        <p>{$game->name|htmlentities}</p>
+        <p>{$game->champion|htmlentities}</p>
+    </li>
+    {/foreach}
+</ul>
+<ul>
+    {foreach ($posts as $post)}
+    <li>
+        <p data-post-id="{$post->id|htmlentities}">{$post->title|htmlentities}</p>
+    </li>
+    {/foreach}
+</ul>
+<table>
+    <thead>
+        <tr>
+            <th>排名</th>
+            <th>队伍名称</th>
+            <th>金牌数</th>
+        </tr>
+    </thead>
+    <tbody>
+        {foreach ($departments as $department)}
+        <tr>
+            <td>{$department->name|htmlentities}</td>
+            <td>{$department->medal_count|htmlentities}</td>
+        </tr>
+        {/foreach}
+    </tbody>
+</table>

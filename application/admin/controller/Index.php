@@ -2,8 +2,6 @@
 
 namespace app\admin\controller;
 
-use think\Request;
-
 class Index extends Controller
 {
     public function index()

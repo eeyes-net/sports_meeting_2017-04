@@ -2,6 +2,7 @@
 use think\Route;
 
 Route::get('/', 'index/Index/index');
+Route::get('post/:id', 'index/Post/read');
 
 Route::get('login', 'auth/CasLogin/login');
 Route::post('logout', 'auth/CasLogin/logout');
@@ -10,6 +11,7 @@ Route::group('admin', function () {
     Route::get('/', 'admin/Index/index');
     Route::group('game', function () {
         Route::get('/', 'admin/Game/index');
+        Route::post('/', 'admin/Game/save');
         Route::put(':id', 'admin/Game/update');
         Route::delete(':id', 'admin/Game/delete');
     });

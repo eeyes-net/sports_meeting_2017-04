@@ -3,17 +3,24 @@
 * 2017-03-31 筹备
 * 2017-04-03 前端开始编写代码
 * 2017-04-06 后端开始编写代码
+* 2017-04-07 后端基本完成
+* 2017-04-11 网站基本完成
 
 ## 安装
 
-## 设置root账户
+1. 解压代码，并执行`composer install`
 
-在命令行执行
-```bash
-php think admin:create your_net_id
-```
+2. `chmod 777 runtime -R`
 
-最后面是你需要设置成root的用户的NetId
+3. 创建数据库（和数据库用户）
+
+4. `cp application/database.php.example application/database.php`，并修改`application/database.php`中的用户名密码
+
+5. 执行`php think migrate:run`
+
+6. `cp application/extra.example application/extra`，并修改`/application/extra/auth.php`中的管理员NetID
+
+7. `chmod 777 runtime -R`
 
 ## 说明
 
@@ -32,13 +39,24 @@ php think admin:create your_net_id
     ├─database           # 数据库文件
     │  └─migrations      # 数据库迁移文件
     ├─public             # Web服务根目录
-    │  ├─css             # 自定义的样式表
-    │  ├─dist            # 现有库
-    │  ├─images          # 页面的图片
-    │  └─js              # 自定义的js
+    │  └─static          # 静态文件
+    │     ├─admin        # 后台管理模块
+    │     │  ├─css       # 自定义的样式表
+    │     │  ├─dist      # 现有库
+    │     │  ├─images    # 页面的图片
+    │     │  └─js        # 自定义的js
+    │     └─index        # 主页模块
+    │        └─src       # 主页的一些附加文件
     ├─runtime            # 日志、编译后的模板、Cache等
     ├─thinkphp           # ThinkPHP5框架目录
     └─vendor             # Composer包目录
+
+## 开发人员
+
+* 产品：Zhang Jiaxing
+* 视觉：
+* 前端：Zhou Yuchen, Ganlv
+* 后端：Ganlv, Cantjie
 
 ## LICENSE
 

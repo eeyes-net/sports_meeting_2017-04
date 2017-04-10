@@ -25,8 +25,11 @@
                     <div class="time-table-body">
                         {foreach ($games14am as $game)}
                         <section class="time-table-section">
-                            <p>{$game->name|htmlentities}</p>
-                            <p>{$game->champion|htmlentities}</p>
+                            <p>项目：{$game->name|htmlentities}</p>
+                            <p>开始时间：{$game->begin_time|strtotime|date="d日H:i",###|htmlentities}</p>
+                            {if ($game->champion)}
+                            <p>冠军：{$game->champion|htmlentities}</p>
+                            {/if}
                         </section>
                         {/foreach}
                     </div>
@@ -36,8 +39,11 @@
                     <div class="time-table-body">
                         {foreach ($games14pm as $game)}
                         <section class="time-table-section">
-                            <p>{$game->name|htmlentities}</p>
-                            <p>{$game->champion|htmlentities}</p>
+                            <p>项目：{$game->name|htmlentities}</p>
+                            <p>开始时间：{$game->begin_time|strtotime|date="d日H:i",###|htmlentities}</p>
+                            {if ($game->champion)}
+                            <p>冠军：{$game->champion|htmlentities}</p>
+                            {/if}
                         </section>
                         {/foreach}
                     </div>
@@ -47,8 +53,11 @@
                     <div class="time-table-body">
                         {foreach ($games15am as $game)}
                         <section class="time-table-section">
-                            <p>{$game->name|htmlentities}</p>
-                            <p>{$game->champion|htmlentities}</p>
+                            <p>项目：{$game->name|htmlentities}</p>
+                            <p>开始时间：{$game->begin_time|strtotime|date="d日H:i",###|htmlentities}</p>
+                            {if ($game->champion)}
+                            <p>冠军：{$game->champion|htmlentities}</p>
+                            {/if}
                         </section>
                         {/foreach}
                     </div>
@@ -58,8 +67,11 @@
                     <div class="time-table-body">
                         {foreach ($games15pm as $game)}
                         <section class="time-table-section">
-                            <p>{$game->name|htmlentities}</p>
-                            <p>{$game->champion|htmlentities}</p>
+                            <p>项目：{$game->name|htmlentities}</p>
+                            <p>开始时间：{$game->begin_time|strtotime|date="d日H:i",###|htmlentities}</p>
+                            {if ($game->champion)}
+                            <p>冠军：{$game->champion|htmlentities}</p>
+                            {/if}
                         </section>
                         {/foreach}
                     </div>

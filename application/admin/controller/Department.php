@@ -15,8 +15,8 @@ class Department extends Controller
     public function save(Request $request)
     {
         $department = new \app\common\model\Department;
-        $department->name = $request->put('name');
-        $department->medal_count = $request->put('medal_count');
+        $department->name = $request->post('name');
+        $department->medal_count = $request->post('medal_count');
         $department->save();
         $this->success();
     }

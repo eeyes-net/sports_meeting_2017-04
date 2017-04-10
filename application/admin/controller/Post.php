@@ -8,7 +8,7 @@ class Post extends Controller
 {
     public function index()
     {
-        $posts = \app\common\model\Post::all();
+        $posts = \app\common\model\Post::order('id', 'desc')->select();
         return $this->fetch('', compact('posts'));
     }
 
@@ -20,8 +20,8 @@ class Post extends Controller
     public function save(Request $request)
     {
         $post = new \app\common\model\Post;
-        $post->title = $request->put('title');
-        $post->body = $request->put('body');
+        $post->title = $request->post('title');
+        $post->body = $request->post('body');
         $post->save();
         $this->success();
     }
@@ -43,8 +43,7 @@ class Post extends Controller
 
     public function delete($id)
     {
-        $post = \app\common\model\Post::get($id);
-        $post->delete();
+        \app\common\model\Post::destroy($id);
         $this->success();
     }
 }

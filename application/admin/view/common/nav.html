@@ -16,7 +16,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{:url('admin/Index/index')}">欢迎您：{:auth()->username()}</a></li>
                 <li>
-                    <form action="{:url('auth/Login/logout')}" method="POST" id="form-logout"></form>
+                    <form action="{:url('auth/CasLogin/logout')}" method="POST" id="form-logout"></form>
                     <a href="javascript:document.getElementById('form-logout').submit();">退出登录</a>
                 </li>
             </ul>

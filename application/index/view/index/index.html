@@ -1,32 +1,121 @@
-<ul>
-    {foreach ($games as $game)}
-    <li>
-        <p>{$game->name|htmlentities}</p>
-        <p>{$game->champion|htmlentities}</p>
-    </li>
-    {/foreach}
-</ul>
-<ul>
-    {foreach ($posts as $post)}
-    <li>
-        <p data-post-id="{$post->id|htmlentities}">{$post->title|htmlentities}</p>
-    </li>
-    {/foreach}
-</ul>
-<table>
-    <thead>
-        <tr>
-            <th>排名</th>
-            <th>队伍名称</th>
-            <th>金牌数</th>
-        </tr>
-    </thead>
-    <tbody>
-        {foreach ($departments as $department)}
-        <tr>
-            <td>{$department->name|htmlentities}</td>
-            <td>{$department->medal_count|htmlentities}</td>
-        </tr>
-        {/foreach}
-    </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <link rel="stylesheet" href="/static/index/src/style.css"/>
+    <script src="/static/index/src/flexible.js"></script>
+    <script type="text/javascript" src="/static/index/src/jquery.min.js"></script>
+</head>
+<body>
+    <section id="page">
+        <header id="header" class="c-fix">
+            <img src="/static/index/src/xjtu_logo.png" id="xjtu_logo">
+            <img src="/static/index/src/eeyes_logo.png" id="eeyes_logo">
+        </header>
+        <section id="section" class="content c-fix">
+            <h1 class="title">赛程</h1>
+            <div id="date" class="c-fix">
+                <div id="d14" class="day">14</div>
+                <div id="d15" class="day">15</div>
+            </div>
+            <div id="half">
+                <div id="14morn" class="time-table-day morning m_14">
+                    <h1 class="time-table-title">14日 上午</h1>
+                    <div class="time-table-body">
+                        {foreach ($games14am as $game)}
+                        <section class="time-table-section">
+                            <p>{$game->name|htmlentities}</p>
+                            <p>{$game->champion|htmlentities}</p>
+                        </section>
+                        {/foreach}
+                    </div>
+                </div>
+                <div id="14after" class="time-table-day afternoon m_14">
+                    <h1 class="time-table-title">14日 下午</h1>
+                    <div class="time-table-body">
+                        {foreach ($games14pm as $game)}
+                        <section class="time-table-section">
+                            <p>{$game->name|htmlentities}</p>
+                            <p>{$game->champion|htmlentities}</p>
+                        </section>
+                        {/foreach}
+                    </div>
+                </div>
+                <div id="15morn" class="time-table-day morning m_15">
+                    <h1 class="time-table-title">15日 上午</h1>
+                    <div class="time-table-body">
+                        {foreach ($games15am as $game)}
+                        <section class="time-table-section">
+                            <p>{$game->name|htmlentities}</p>
+                            <p>{$game->champion|htmlentities}</p>
+                        </section>
+                        {/foreach}
+                    </div>
+                </div>
+                <div id="15after" class="time-table-day afternoon m_15">
+                    <h1 class="time-table-title">15日 下午</h1>
+                    <div class="time-table-body">
+                        {foreach ($games15pm as $game)}
+                        <section class="time-table-section">
+                            <p>{$game->name|htmlentities}</p>
+                            <p>{$game->champion|htmlentities}</p>
+                        </section>
+                        {/foreach}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="news" class="content">
+            <h1 class="title">新闻</h1>
+            <ul id="newslist" class="c-fix">
+                {foreach ($posts as $post)}
+                <li class="c-fix" data-href="{:url('index/Post/read', ['id' => $post->id])}">
+                    <p class="column">{$post->title|htmlentities}</p>
+                </li>
+                {/foreach}
+            </ul>
+        </section>
+        <section id="rankinglist" class="content c-fix">
+            <h1 class="title">排行榜</h1>
+            <div id="column" class="c-fix">
+                <div class="ordinal column">排名</div>
+                <div id="teamname" class="team_name column">队伍名称</div>
+                <div class="metal column">金牌数</div>
+            </div>
+            <ul id="ranking_list" class="c-fix">
+                <?php $i = 0; ?>
+                {foreach ($departments as $department)}
+                <?php ++$i; ?>
+                <li class="c-fix">
+                    <div class="ordinal column">{$i}</div>
+                    <div class="team_name column">{$department->name|htmlentities}</div>
+                    <div class="metal column">{$department->medal_count|htmlentities}</div>
+                </li>
+                {/foreach}
+            </ul>
+            <div id="more">…</div>
+        </section>
+        <!--<section id="search_team" class="title">-->
+        <!--<div>查询队伍</div>-->
+        <!--</section>-->
+        <section id="overview" class="content">
+            <h1 class="title">总览</h1>
+            <div class="column">
+                <div id="pie-chart"></div>
+            </div>
+        </section>
+        <section id="h5">
+            <div id="enter_h5">进入h5</div>
+        </section>
+        <section id="newsviewport-container">
+            <section id="newsviewport-bg"></section>
+            <section id="newsviewport"></section>
+        </section>
+        <footer id="footer">
+            <p>© eeyes.net</p>
+        </footer>
+    </section>
+    <script src="/static/index/src/main.js" type="text/javascript"></script>
+</body>
+</html>

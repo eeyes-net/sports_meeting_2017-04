@@ -23,4 +23,7 @@ $(function () {
     $('#more').on('click', function () {
         $('.ranking-list-collapse').toggle();
     });
+    $('#h5').on('click', function () {
+        location.href = 'http://h5.2017.eeyes.net';
+    });
 });

@@ -253,6 +253,14 @@
     color: #e5e5e5;
 }
 
+#h5logo {
+    width: 4.375rem;
+    height: 5.953125rem;
+    margin-left: 33%;
+    margin-top: 1.25rem;
+    margin-bottom: .6rem;
+}
+
 /**
  * The following lines are added by Ganlv
  */
@@ -299,4 +307,12 @@
 #newsviewport {
     display: block;
     overflow-y: auto;
+}
+
+#newslist li {
+    padding-left: 1em;
+}
+
+#pie-chart {
+    font-size: 16px;
 }

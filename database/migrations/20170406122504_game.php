@@ -30,6 +30,7 @@ class Game extends Migrator
     {
         $this->table('game', ['engine' => 'MyISAM'])
             ->addColumn('name', 'text', ['comment' => '比赛名称'])
+            ->addColumn('type', 'string', ['limit' => 20, 'comment' => '比赛类型'])
             ->addColumn('begin_time', 'datetime', ['comment' => '开始时间'])
             ->addColumn('champion', 'text', ['comment' => '冠军'])
             ->addTimestamps('create_time', 'update_time')

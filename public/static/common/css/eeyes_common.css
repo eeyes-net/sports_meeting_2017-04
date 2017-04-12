@@ -134,6 +134,7 @@
 
 .eeyes-common-footer-main-block-icon-list li {
     margin-bottom: 16px;
+    font-size: 0;
 }
 
 .eeyes-common-footer-main-block-icon-list-icon-container {
@@ -150,6 +151,7 @@
 
 .eeyes-common-footer-main-block-icon-list-text-container {
     display: inline-block;
+    margin-left: 6px;
     color: #595959;
     font-size: 12px;
     line-height: 16px;

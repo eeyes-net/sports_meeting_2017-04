@@ -14,8 +14,8 @@
     clear: both;
 }
 
-#page {
-    background: url('./background.png') center fixed;
+body {
+    background: url('./background.jpg') center center fixed;
     background-size: cover;
 }
 

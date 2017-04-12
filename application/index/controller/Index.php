@@ -16,6 +16,9 @@ class Index extends Controller
         $posts = \app\common\model\Post::all();
         $medal_data = [];
         foreach ($departments as $department) {
+			if ($department->medal_count <= 0) {
+				continue;
+			}
             $medal_data[] = [
                 'value' => $department->medal_count,
                 'name' => $department->name,

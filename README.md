@@ -16,7 +16,7 @@
 
 4. `cp application/database.php.example application/database.php`，并修改`application/database.php`中的用户名密码
 
-5. 执行`php think migrate:run`
+5. `php think migrate:run`
 
 6. `cp application/extra.example application/extra`，并修改`/application/extra/auth.php`中的管理员NetID
 
@@ -33,7 +33,6 @@
     │  ├─extra           # ThinkPHP5自动加载的额外配置文件
     │  ├─extra.example   # 额外配置文件目录示例
     │  ├─index           # 主页模块
-    │  ├─lang            # 一些翻译、字符串常量
     │  ├─tpl             # 404页面等
     │  └─traits          # 可复用的Traits
     ├─database           # 数据库文件

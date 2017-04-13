@@ -11,7 +11,7 @@
 </head>
 <body>
     <div style="display: none;">
-        <img class="share-image" src="/static/index/src/share.gif" alt="分享标题图片">
+        <img class="share-image" src="/static/index/src/share.jpg" alt="分享标题图片">
     </div>
     <section id="page">
         <header id="header" class="c-fix">
@@ -104,7 +104,7 @@
                 <?php $i = 0; ?>
                 {foreach ($departments as $department)}
                 <?php ++$i; ?>
-                <li class="c-fix">
+                <li class="c-fix" id="{$department->name|htmlentities}">
                     <div class="ordinal column">{$i}</div>
                     <div class="team_name column">{$department->name|htmlentities}</div>
                     <div class="metal column">{$department->medal_count|htmlentities}</div>
@@ -127,7 +127,9 @@
         </section>
         <section id="newsviewport-container">
             <section id="newsviewport-bg"></section>
-            <section id="newsviewport"></section>
+            <section id="newsviewport">
+                <img id="close" src="/static/index/src/close.png">
+            </section>
         </section>
         <footer id="footer">
             <p>© eeyes.net</p>

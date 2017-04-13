@@ -15,7 +15,7 @@
 }
 
 html {
-    background: url(background.jpg) no-repeat center center fixed;
+    background: url(background.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -246,7 +246,9 @@ html {
     width: 8.75rem;
     top: 1rem;
     left: 0.625rem;
+    padding: 1.6rem 1.066667rem;
     background-color: rgba(255, 255, 255, .8);
+    box-sizing: border-box;
 }
 
 #footer {
@@ -318,4 +320,10 @@ html {
 
 #pie-chart {
     font-size: 16px;
+}
+
+#close {
+    position: absolute;
+    top: .2rem;
+    right: .2rem;
 }

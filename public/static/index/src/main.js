@@ -27,11 +27,11 @@ $(function () {
     });
     $('#newslist li').on('click', function () {
         $.get($(this).attr('data-href'), function (data) {
-            $('#newsviewport').append($('<div></div>').html(data));
-			$('#newsviewport img').attr({
-				width: '',
-				height: ''
-			});
+            $('#newsviewport-main').html(data);
+            $('#newsviewport-main img').attr({
+                width: '',
+                height: ''
+            });
             $('#newsviewport-container').show();
         });
     });

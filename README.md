@@ -20,7 +20,15 @@
 
 6. `cp application/extra.example application/extra`，并修改`/application/extra/auth.php`中的管理员NetID
 
-7. `chmod 777 runtime -R`
+7. 优化缓存
+    ```bash
+    php think optimize:autoload
+    php think optimize:config
+    php think optimize:route
+    php think optimize:schema
+    ```
+
+8. `chmod 777 runtime -R`
 
 ## 说明
 
@@ -54,7 +62,7 @@
 
 * 产品：Zhang Jiaxing
 * 视觉：
-* 前端：Zhou Yuchen, Ganlv
+* 前端：Zhou Yuchen, Ganlv, ensorrow, 594WangHao
 * 后端：Ganlv, Cantjie
 
 ## LICENSE

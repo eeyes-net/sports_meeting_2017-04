@@ -1,0 +1,9 @@
+{if ($Think.session.error)}
+<div class="alert alert-error">
+    {$Think.session.error}
+</div>
+{elseif ($Think.session.success) /}
+<div class="alert alert-success">
+    {$Think.session.success}
+</div>
+{/if}

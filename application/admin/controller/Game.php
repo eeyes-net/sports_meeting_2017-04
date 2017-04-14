@@ -3,6 +3,7 @@
 namespace app\admin\controller;
 
 use think\Request;
+use think\Session;
 
 class Game extends Controller
 {
@@ -19,7 +20,8 @@ class Game extends Controller
         $game->begin_time = $request->post('begin_time');
         $game->champion = $request->post('champion');
         $game->save();
-        $this->success();
+        Session::flash('success', $game->name . '更新成功');
+        return redirect($_SERVER['HTTP_REFERER']);
     }
 
     public function update(Request $request, $id)
@@ -29,7 +31,8 @@ class Game extends Controller
         $game->begin_time = $request->put('begin_time');
         $game->champion = $request->put('champion');
         $game->save();
-        $this->success();
+        Session::flash('success', $game->name . '更新成功');
+        return redirect($_SERVER['HTTP_REFERER']);
     }
 
     public function delete($id)

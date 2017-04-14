@@ -3,6 +3,7 @@
 namespace app\admin\controller;
 
 use think\Request;
+use think\Session;
 
 class Department extends Controller
 {
@@ -18,7 +19,8 @@ class Department extends Controller
         $department->name = $request->post('name');
         $department->medal_count = $request->post('medal_count');
         $department->save();
-        $this->success();
+        Session::flash('success', $department->name . '更新成功');
+        return redirect($_SERVER['HTTP_REFERER']);
     }
 
     public function update(Request $request, $id)
@@ -27,7 +29,8 @@ class Department extends Controller
         $department->name = $request->put('name');
         $department->medal_count = $request->put('medal_count');
         $department->save();
-        $this->success();
+        Session::flash('success', $department->name . '更新成功');
+        return redirect($_SERVER['HTTP_REFERER']);
     }
 
     public function delete($id)

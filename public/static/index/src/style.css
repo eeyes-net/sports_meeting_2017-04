@@ -242,7 +242,7 @@ html {
 #newsviewport {
     display: none;
     position: fixed;
-    height: 15.625rem;
+    bottom: 1rem;
     width: 8.75rem;
     top: 1rem;
     left: 0.625rem;
@@ -326,4 +326,16 @@ html {
     position: absolute;
     top: .2rem;
     right: .2rem;
+	width: .5rem;
+	height: .5rem;
+}
+
+#newsviewport {
+	font-size: 16px;
+}
+
+#newsviewport img {
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
 }

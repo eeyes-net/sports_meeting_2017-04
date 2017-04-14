@@ -21,7 +21,7 @@ class Index extends Controller
         $medal_data = [];
         foreach ($departments as $department) {
             if ($department->medal_count <= 0) {
-                continue;
+                // continue;
             }
             $medal_data[] = [
                 'value' => $department->medal_count,
